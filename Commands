@@ -1,0 +1,11 @@
+show dbs - просмотр существующих баз данных
+use mongo - создание базы данных монго и её использование
+db.createCollection("users") - создание таблицы
+show collections - просмотр таблиц
+db.users.insert({ name: "Pavel", age:25 }) - заполнение таблицы данными
+db.users.find() - просмотр содержимого таблицы
+db.users.insertMany([ {name: "pavel", age: 25}, {name: "test", age: 30} ]) - добавление множества сущностей в таблицу
+db.users.find({ age: 25 })- поиск в таблице объекта с возрастом 25
+db.users.find({$or[{ name: "Pavel" }, { name: "James" }]})- поиск в таблице по нескольким критериям
+db.users.find().sort({age:1}) - сортировка от меньшего возраста к большему (при указании -1 - наоборот)
+db.users.update({ name: "pavel"}, { $set { name: "Nik" } })
